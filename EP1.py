@@ -10,7 +10,7 @@ def filter_array(multiples: [], excluded_numbers: []) -> []:
     # Or could do this, but harder to understand whats going on
     # return list(filter(
     #    lambda element: element not in excluded_numbers, multiples
-    #))
+    # ))
     filtered_array = []
     for element in multiples:
         if element not in excluded_numbers:
