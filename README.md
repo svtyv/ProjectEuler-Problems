@@ -1,2 +1,1 @@
-# EP0001
-EulersProject #1
+Problems from https://projecteuler.net/
