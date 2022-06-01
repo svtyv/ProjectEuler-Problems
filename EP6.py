@@ -1,3 +1,4 @@
+#Square of the sums solved on paper (n(n+1)/2)^2
 def sumOfSquares():
     squares = []
     n = 1
