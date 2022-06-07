@@ -1,7 +1,7 @@
 import math
 
 
-# Lowest has to be divisible by 2
+# Lowest has to be 2
 def prime_finder(lowest: int, highest: int):
     base = math.floor(math.sqrt(highest))
     base_primes = []
