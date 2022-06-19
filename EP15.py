@@ -21,9 +21,10 @@ def lattice():
         highest_value = max(another_set)
         another_set = []
         a = 0
-        k +=1
-
+        k += 1
 
     print(small_set)
     print(highest_value)
+
+
 lattice()
