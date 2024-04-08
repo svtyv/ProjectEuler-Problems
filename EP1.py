@@ -1,41 +1,29 @@
-
-def multiplying(multiplesOfThree,multiplesOfFive):
-    multiplesOfThree = []
-    multiplesOfFive = []
-    sum = int(0)
-    n = int(1)
-    while n <= 333:
-        Three = n*3
-        multiplesOfThree.append(Three)
-        n += 1
-    n = int(1)
-    while n <= 199:
-        Five = n*5
-        multiplesOfFive.append(Five)
-        n += 1
-    for element in multiplesOfThree:
-        if element in multiplesOfFive:
-            multiplesOfThree.remove(element)
-        else:
-            pass
-
-    return(multiplesOfFive, multiplesOfThree)
-
-def theSumOfLists(list1,list2):
-    sum1 = int(0)
-    sum2 = int(0)
-    total = int(0)
-    for element in list1:
-        sum1 = element + sum1
-    for element in list2:
-        sum2 = element + sum2
-    total = sum1 + sum2
-    return total
+def get_multiples(num_range: int, multiplier: int) -> []:
+    multiples = []
+    for n in range(num_range):
+        multiple = (n + 1) * multiplier
+        multiples.append(multiple)
+    return multiples
 
 
+def filter_array(multiples: [], excluded_numbers: []) -> []:
+    # Or could do this, but harder to understand whats going on
+    # return list(filter(
+    #    lambda element: element not in excluded_numbers, multiples
+    # ))
+    filtered_array = []
+    for element in multiples:
+        if element not in excluded_numbers:
+            filtered_array.append(element)
+    return filtered_array
 
-multiples = multiplying(3,5)
-total = theSumOfLists(multiples[0],multiples[1])
-print(total)
 
-
+if __name__ == '__main__':
+    multiples_of_three = get_multiples(333, 3)
+    multiples_of_five = get_multiples(199, 5)
+    filtered_multiples_of_three = filter_array(
+        multiples=multiples_of_three,
+        excluded_numbers=multiples_of_five
+    )
+    total = sum(filtered_multiples_of_three) + sum(multiples_of_five)
+    print(total)
