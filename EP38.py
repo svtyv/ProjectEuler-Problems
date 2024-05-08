@@ -27,10 +27,8 @@ for i in multipliers_arr:
         else:
             continue
 
-concatenated_numbers = sorted(concatenated_numbers)
-concatenated_numbers = np.array(concatenated_numbers)
-concatenated_numbers = concatenated_numbers.astype(str)
-concatenated_numbers = list(concatenated_numbers)
+concatenated_numbers = sorted(list(np.array(concatenated_numbers).astype(str)))
+
 for n in concatenated_numbers[:]:
     if "0" in n:
         concatenated_numbers.remove(n)
